@@ -14,7 +14,12 @@
         {
             "description": "Py Project 1 | Enabled",
             "matchFileNames": ["py-project2/**"],
-            "enabled": true
+            "enabled": true,
+            "postUpgradeTasks": {
+                "commands": [
+                    "echo 'Running Post Upgrade Task'"
+                ],
+            }
         }
     ]
 }
