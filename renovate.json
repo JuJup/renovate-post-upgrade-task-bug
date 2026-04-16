@@ -5,20 +5,52 @@
     "vulnerabilityAlerts": {
       "enabled": true
     },
+    "pep723": {"managerFilePatterns": ["py-project1/**/*.py"]},
     "packageRules": [
         {
-            "description": "Py Project 1 | Deactivate all (only security updates are active by default)",
+            "description": "Py Project 1 | General settings for Python Dependencies",
             "matchFileNames": ["py-project1/**"],
-            "enabled": false        
+            "matchCategories": ["python"],
+            "extends": ["schedule:quarterly"],
+            "lockFileMaintenance": {
+                "automerge": true,
+                "autoApprove": true
+            },
+            "patch": {
+                "automerge": true,
+                "autoApprove": true
+            },
+            "pin": {
+                "automerge": true,
+                "autoApprove": true
+            }
         },
         {
-            "description": "Py Project 1 | Enabled",
+            "description": "Py Project 1 | Note for manual uv lock file maintenance",
+            "matchFileNames": ["py-project1/**"],
+            "matchManagers": ["pep723"],
+            "prBodyNotes": ["⚠️ As long as Renovate doesn't support [PEP 723 Lock File Support](https://github.com/renovatebot/renovate/issues/33591) a manual uv lock is necessary!"]
+        },
+        {
+            "description": "Py Project 2 | General settings for Python Dependencies",
             "matchFileNames": ["py-project2/**"],
-            "enabled": true,
+            "matchCategories": ["python"],
+            "extends": ["schedule:monthly"],
             "postUpgradeTasks": {
-                "commands": [
-                    "echo 'Running Post Upgrade Task'"
-                ],
+                "commands": ["echo 'Running Post Upgrade Task'"],
+                "executionMode": "branch"
+            },
+            "lockFileMaintenance": {
+                "automerge": true,
+                "autoApprove": true
+            },
+            "patch": {
+                "automerge": true,
+                "autoApprove": true
+            },
+            "pin": {
+                "automerge": true,
+                "autoApprove": true
             }
         }
     ]
