@@ -1,7 +1,6 @@
 [project]
-name = "py-project1"
+name = "py-project0"
 version = "1.0.0"
 dependencies = [
-    "sqlalchemy==2.0.20",
     "pytest==9.0.0"
 ]
