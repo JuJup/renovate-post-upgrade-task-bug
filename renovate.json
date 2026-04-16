@@ -8,6 +8,14 @@
     "pep723": {"managerFilePatterns": ["py-project1/**/*.py"]},
     "packageRules": [
         {
+            "description": "Python Dev Dependencies | Automerge Dev/Test Groups in pyproject.toml files",
+            "matchManagers": ["pep621"],
+            "matchDepTypes": ["dependency-groups"],
+            "matchJsonata": ["managerData.depGroup = 'dev'"],
+            "automerge": true,
+            "autoApprove": true
+        },
+        {
             "description": "Py Project 0 | General settings",
             "matchFileNames": ["py-project0/**"],
             "extends": ["schedule:weekly"]
