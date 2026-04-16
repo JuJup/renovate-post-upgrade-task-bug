@@ -1,11 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["config:best-practices"],
-    "osvVulnerabilityAlerts": true,
-    "vulnerabilityAlerts": {
-      "enabled": true
-    },
-    "pep723": {"managerFilePatterns": ["py-project1/**/*.py"]},
+
     "packageRules": [
         {
             "description": "Python Dev Dependencies | Automerge Dev/Test Groups in pyproject.toml files",
@@ -30,40 +26,16 @@
             "description": "Py Project 1 | General settings for Python Dependencies",
             "matchFileNames": ["py-project1/**"],
             "matchCategories": ["python"],
-            "extends": ["schedule:quarterly"],
-            "lockFileMaintenance": {
-                "automerge": true,
-                "autoApprove": true
-            },
-            "patch": {
-                "automerge": true,
-                "autoApprove": true
-            },
-            "pin": {
-                "automerge": true,
-                "autoApprove": true
-            }
+            "extends": ["schedule:quarterly", ":automergeStableNonMajor"]
         },
         {
             "description": "Py Project 2 | General settings for Python Dependencies",
             "matchFileNames": ["py-project2/**"],
             "matchCategories": ["python"],
-            "extends": ["schedule:monthly"],
+            "extends": ["schedule:monthly", ":automergeStableNonMajor"],
             "postUpgradeTasks": {
                 "commands": ["echo 'Running Post Upgrade Task'"],
                 "executionMode": "branch"
-            },
-            "lockFileMaintenance": {
-                "automerge": true,
-                "autoApprove": true
-            },
-            "patch": {
-                "automerge": true,
-                "autoApprove": true
-            },
-            "pin": {
-                "automerge": true,
-                "autoApprove": true
             }
         }
     ]
