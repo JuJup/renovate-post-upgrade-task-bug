@@ -1,0 +1,6 @@
+[project]
+name = "py-project1"
+version = "1.0.0"
+dependencies = [
+    "requests==2.32.4"
+]

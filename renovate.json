@@ -1,1 +1,20 @@
-{}
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:best-practices"],
+    "osvVulnerabilityAlerts": true,
+    "vulnerabilityAlerts": {
+      "enabled": true
+    },
+    "packageRules": [
+        {
+            "description": "Py Project 1 | Deactivate all (only security updates are active by default)",
+            "matchFileNames": ["py-project1/**"],
+            "enabled": false        
+        },
+        {
+            "description": "Py Project 1 | Enabled",
+            "matchFileNames": ["py-project2/**"],
+            "enabled": true
+        }
+    ]
+}
