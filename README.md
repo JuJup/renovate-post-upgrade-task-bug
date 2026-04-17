@@ -1,17 +1,14 @@
-# minimal-reproduction-template
-
-First, read the [Renovate minimal reproduction instructions](https://github.com/renovatebot/renovate/blob/main/docs/development/minimal-reproductions.md).
-
-Then replace the current `h1` with the Renovate Issue/Discussion number.
+# #42704 - `postUpgradeTasks` with `executionMode: "branch"` silently skipped when dependency exists in multiple project directories
 
 ## Current behavior
 
-Explain the current behavior here.
+postUpgradeTasks runs for one update, but not for the other. Compare the two PRs:
+https://github.com/JuJup/renovate-post-upgrade-task-bug/pulls
 
 ## Expected behavior
 
-Explain the expected behavior here.
+`postUpgradeTasks` should run for both.
 
 ## Link to the Renovate issue or Discussion
 
-Put your link to the Renovate issue or Discussion here.
+https://github.com/renovatebot/renovate/discussions/42704
