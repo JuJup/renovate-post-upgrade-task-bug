@@ -17,22 +17,14 @@
             "extends": ["schedule:weekly"]
         },
         {
-            "description": "Py Project 0 | Automerge Python stable non major",
-            "matchFileNames": ["py-project0/**"],
-            "matchCategories": ["python"],
-            "extends": [":automergeStableNonMajor"]
-        },
-        {
             "description": "Py Project 1 | General settings for Python Dependencies",
             "matchFileNames": ["py-project1/**"],
-            "matchCategories": ["python"],
-            "extends": ["schedule:quarterly", ":automergeStableNonMajor"]
+            "extends": ["schedule:quarterly"]
         },
         {
             "description": "Py Project 2 | General settings for Python Dependencies",
             "matchFileNames": ["py-project2/**"],
-            "matchCategories": ["python"],
-            "extends": ["schedule:monthly", ":automergeStableNonMajor"],
+            "extends": ["schedule:monthly"],
             "postUpgradeTasks": {
                 "commands": ["echo 'Running Post Upgrade Task'"],
                 "executionMode": "branch"
