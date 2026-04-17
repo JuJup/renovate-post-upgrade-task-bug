@@ -25,12 +25,14 @@
         {
             "description": "Py Project 1 | General settings for Python Dependencies",
             "matchFileNames": ["py-project1/**"],
-            "extends": ["schedule:quarterly"]
+            "matchCategories": ["python"],
+            "extends": ["schedule:quarterly", ":automergeStableNonMajor"]
         },
         {
             "description": "Py Project 2 | General settings for Python Dependencies",
             "matchFileNames": ["py-project2/**"],
-            "extends": ["schedule:monthly"],
+            "matchCategories": ["python"],
+            "extends": ["schedule:monthly", ":automergeStableNonMajor"],
             "postUpgradeTasks": {
                 "commands": ["echo 'Running Post Upgrade Task'"],
                 "executionMode": "branch"
