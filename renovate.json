@@ -17,6 +17,12 @@
             "extends": ["schedule:weekly"]
         },
         {
+            "description": "Py Project 0 | Automerge Python stable non major",
+            "matchFileNames": ["py-project0/**"],
+            "matchCategories": ["python"],
+            "extends": [":automergeStableNonMajor"]
+        },
+        {
             "description": "Py Project 1 | General settings for Python Dependencies",
             "matchFileNames": ["py-project1/**"],
             "extends": ["schedule:quarterly"]
